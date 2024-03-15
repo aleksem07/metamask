@@ -1,10 +1,6 @@
 @import "./variables.module.scss";
 
-.body {
-  background-color: $colorBackground;
-}
-
-.visually-hidden {
+.visuallyHidden {
   position: absolute;
   width: 1px;
   height: 1px;

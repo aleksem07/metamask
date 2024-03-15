@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import '@/UI/scss/globals.scss';
-import '@/UI/scss/normalize.scss';
+import "./globals.scss";
+import "@/UI/scss/normalize.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Crypto Wallet",
-  description: "description",
+  description: "A crypto wallet & gateway to blockchain apps",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`body ${inter.className}`}>{children}</body>
+      <body className={`${inter.className}`}>{children}</body>
     </html>
   );
 }

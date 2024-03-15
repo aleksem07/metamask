@@ -1,0 +1,35 @@
+@import "@/UI/scss/variables.module.scss";
+
+$paddingInline: 0.5rem;
+$paddingBlock: 1rem;
+$minWidth: 271px;
+$minHeight: 122px;
+$width: 50%;
+$height: 25%;
+
+.wallet {
+  padding: 0.5rem;
+  padding-top: $paddingBlock;
+  padding-inline: $paddingInline;
+  width: calc($width - $paddingInline);
+  height: calc($height - $paddingBlock);
+  min-width: calc($minWidth - $paddingInline);
+  min-height: calc($minHeight - $paddingInline);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  border-radius: 1rem;
+  box-shadow: 0 15px 45px -35px $primary-color;
+  background-color: $light-color;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 1rem;
+  grid-column: 1 / -1;
+}
+
+.title {
+  font-size: 0.75rem;
+}

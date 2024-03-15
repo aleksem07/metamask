@@ -1,0 +1,32 @@
+@import "@/UI/scss/variables.module.scss";
+
+body {
+  margin: 0 auto;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  height: 100vh;
+  background-color: $colorBackground;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}

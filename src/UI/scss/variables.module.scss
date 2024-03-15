@@ -4,6 +4,9 @@ $light-color: #fff;
 $dark-color: #000;
 $colorBackground: #d1d7ed;
 
+$maxWidth: 1240px;
+$minWidth: 360px;
+
 
 :export {
   colorPrimary: $primary-color;
