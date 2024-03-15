@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import variables from "@/app/UI/scss/variables.module.scss";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
+        <p style={{ color: variables.primaryColor }}>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
