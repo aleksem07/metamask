@@ -9,10 +9,6 @@ export const CRYPTO_LIST = [
     Icon: CurrencyBitcoinIcon,
   },
   {
-    name: "USDT",
-    Icon: AttachMoneyIcon,
-  },
-  {
     name: "ETH",
     Icon: AttachMoneyIcon,
   },

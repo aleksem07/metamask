@@ -100,10 +100,11 @@ const App = () => {
 
       {wallet.accounts.length > 0 && (
         <>
+          {console.log(wallet)}
           <div>Wallet Accounts: {wallet.accounts[0]}</div>
           <div>Wallet Balance: {wallet.balance}</div>
           <div>Hex ChainId: {wallet.chainId}</div>
-          <div>Numeric ChainId: {formatChainAsNum(wallet.chainId)}</div>{" "}
+          <div>Numeric ChainId: {formatChainAsNum(wallet.chainId)}</div>
         </>
       )}
 
@@ -113,7 +114,11 @@ const App = () => {
         </div>
       )}
 
-      <Wallet balance={wallet.balance} />
+      <Wallet
+        address={wallet.accounts[0]}
+        balance={wallet.balance}
+        chain={wallet.chainId}
+      />
     </section>
   );
 };
