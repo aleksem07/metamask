@@ -1,12 +1,23 @@
 import style from "./inputs.module.scss";
 import ButtonSwap from "@/components/buttons/button-swap";
 
-const Inputs = ({ className }: { className?: string }) => {
+const Inputs = ({
+  className,
+  balance,
+}: {
+  className?: string;
+  balance: string;
+}) => {
   return (
     <div className={`${style.inputs} ${className ? className : ""}`}>
       <label>
         Amount
-        <input type="text" name="name" placeholder="30.00" />
+        <input
+          type="text"
+          name="name"
+          defaultValue={balance}
+          placeholder="30.00"
+        />
       </label>
 
       <ButtonSwap />

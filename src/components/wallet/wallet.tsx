@@ -4,7 +4,7 @@ import Currency from "@/components/currency/currency";
 import ButtonExchange from "@/components/buttons/button-exchange";
 import Inputs from "@/components/inputs/inputs";
 
-const Wallet = () => {
+const Wallet = ({ balance }: { balance: string }) => {
   return (
     <section className={style.wallet}>
       <div className={style.titleContainer}>
@@ -16,7 +16,7 @@ const Wallet = () => {
         currencyType={CURRENCY_LIST}
         className={style.positionCurrency}
       />
-      <Inputs className={style.positionInputs} />
+      <Inputs balance={balance} className={style.positionInputs} />
       <ButtonExchange className={style.positionButtonExchange} />
     </section>
   );

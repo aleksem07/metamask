@@ -15,6 +15,10 @@ const App = () => {
   };
   const [wallet, setWallet] = useState(initialState);
 
+  const [isConnecting, setIsConnecting] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   useEffect(() => {
     const refreshAccounts = (accounts: any) => {
       if (accounts.length > 0) {
@@ -63,11 +67,23 @@ const App = () => {
   };
 
   const handleConnect = async () => {
-    let accounts = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
-    updateWallet(accounts);
+    setIsConnecting(true);
+    await window.ethereum
+      .request({
+        method: "eth_requestAccounts",
+      })
+      .then((accounts: []) => {
+        setError(false);
+        updateWallet(accounts);
+      })
+      .catch((err: any) => {
+        setError(true);
+        setErrorMessage(err.message);
+      });
+    setIsConnecting(false);
   };
+
+  const disableConnect = Boolean(wallet) && isConnecting;
 
   return (
     <section className={styles.container}>
@@ -77,11 +93,14 @@ const App = () => {
       <h2>Injected Provider {hasProvider ? "DOES" : "DOES NOT"} Exist</h2>
 
       {window.ethereum?.isMetaMask && wallet.accounts.length < 1 && (
-        <button onClick={handleConnect}>Connect MetaMask</button>
+        <button disabled={disableConnect} onClick={handleConnect}>
+          Connect MetaMask
+        </button>
       )}
 
       {wallet.accounts.length > 0 && (
         <>
+          {console.log(wallet)}
           <div>Wallet Accounts: {wallet.accounts[0]}</div>
           <div>Wallet Balance: {wallet.balance}</div>
           <div>Hex ChainId: {wallet.chainId}</div>
@@ -89,7 +108,7 @@ const App = () => {
         </>
       )}
 
-      <Wallet />
+      <Wallet balance={wallet.balance} />
     </section>
   );
 };
