@@ -100,12 +100,17 @@ const App = () => {
 
       {wallet.accounts.length > 0 && (
         <>
-          {console.log(wallet)}
           <div>Wallet Accounts: {wallet.accounts[0]}</div>
           <div>Wallet Balance: {wallet.balance}</div>
           <div>Hex ChainId: {wallet.chainId}</div>
           <div>Numeric ChainId: {formatChainAsNum(wallet.chainId)}</div>{" "}
         </>
+      )}
+
+      {error && (
+        <div onClick={() => setError(false)}>
+          <strong>Error:</strong> {errorMessage}
+        </div>
       )}
 
       <Wallet balance={wallet.balance} />
