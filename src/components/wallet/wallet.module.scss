@@ -5,7 +5,7 @@ $paddingBlock: 1rem;
 $minWidth: 271px;
 $minHeight: 122px;
 $width: 50%;
-$height: 25%;
+$height: 30%;
 
 .wallet {
   padding: 0.5rem;
@@ -46,4 +46,9 @@ $height: 25%;
 .positionButtonExchange {
   grid-row: 4 / 5;
   grid-column: 1 / 3;
+}
+
+.positionInputs {
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
 }

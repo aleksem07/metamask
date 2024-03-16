@@ -1,0 +1,23 @@
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // grid-template-columns: 1fr, max-content, 1fr;
+  // grid-template-rows: min-content, auto, min-content;
+
+  & label {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+
+  & input {
+    width: 100%;
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5rem;
+}
