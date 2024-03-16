@@ -9,7 +9,7 @@ $height: 25%;
 
 .wallet {
   padding: 0.5rem;
-  padding-top: $paddingBlock;
+  padding-block: $paddingBlock;
   padding-inline: $paddingInline;
   width: calc($width - $paddingInline);
   height: calc($height - $paddingBlock);
@@ -32,4 +32,12 @@ $height: 25%;
 
 .title {
   font-size: 0.75rem;
+}
+
+.positionStart {
+  grid-column: 1 / span 2;
+}
+
+.positionEnd {
+  grid-column: -1 / -4;
 }

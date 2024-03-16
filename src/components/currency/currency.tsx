@@ -8,13 +8,21 @@ interface ICurrencyProps {
   Icon: React.ComponentType<SvgIconProps>;
 }
 
-const Currency = ({ currencyType }: { currencyType: ICurrencyProps[] }) => (
-  <ul className={style.currency}>
-    {currencyType.map(({ name, Icon }, index) => {
+const Currency = ({
+  currencyType,
+  className,
+}: {
+  currencyType: ICurrencyProps[];
+  className?: string;
+}) => (
+  <ul className={`${style.currency} ${className ? className : ""}`}>
+    {currencyType.map(({ name, Icon }) => {
       return (
-        <li key={uuidv4()} className={style.currencyItem}>
-          <Icon />
-          <span>{name}</span>
+        <li key={uuidv4()}>
+          <button className={style.currencyItem}>
+            <Icon fontSize="small" />
+            {name}
+          </button>
         </li>
       );
     })}
